@@ -5,14 +5,19 @@ export interface Product {
 
 let products:Product[] = [{name:"flops",price: 50}, {name:"scooter", price:120}, {name:"bottle",price:30}];
 
-const calcAverageProductPrice = (products:Product[]):number  => {
+export const calcAverageProductPrice = (products:Product[]):number  => {
     let average:number = 0;
-    
+    let sum:number = 0;
     for(let i = 0; i < products.length; i++){
-        average += products[i].price
+        sum += products[i].price
     }
-    return average = average / products.length;
+    if(products.length === 0) { // If the array is empty return zero.
+        return 0;
+    }
+    return average = sum / products.length; //probably fails on empty array...oof
 }
 
-console.log(calcAverageProductPrice(products));
-
+let averagePrice:number = calcAverageProductPrice(products);
+//let emptyArray:Product[] = [] // Just to test the function with an empty array...see line 23.
+console.log(averagePrice);
+//console.log(calcAverageProductPrice(emptyArray))

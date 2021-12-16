@@ -1,4 +1,4 @@
-interface Mountain {
+export interface Mountain {
     name:string;
     height:number
 }
@@ -17,5 +17,6 @@ export const findNameOfTallestMountain = (mountains:Mountain[]):string => {
     }
     return mountainName
 }
-console.log(findNameOfTallestMountain(mountains));
+let tallesMountain:string = findNameOfTallestMountain(mountains)
 
+console.log(tallesMountain)
