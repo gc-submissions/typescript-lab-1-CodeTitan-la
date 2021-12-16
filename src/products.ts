@@ -5,7 +5,7 @@ export interface Product {
 
 let products:Product[] = [{name:"flops",price: 50}, {name:"scooter", price:120}, {name:"bottle",price:30}];
 
-const calcAverageProductPrice = (products:Product[])  => {
+const calcAverageProductPrice = (products:Product[]):number  => {
     let average:number = 0;
     
     for(let i = 0; i < products.length; i++){
